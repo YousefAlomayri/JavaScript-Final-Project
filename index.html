@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alomayri' restaurant</title>
+    <script type= "text/javascript" src="neworderclass.js" ></script>
+    <script type= "text/javascript" src="alomayrimenu.js" defer></script>
+    <style>
+        header{text-align: center; font-family: Arial, Helvetica, sans-serif;}
+        body{background-color: lightgoldenrodyellow; background-image: url(pizza.png); background-repeat: no-repeat; background-size: 100%;}
+        .loginOrCreate{ background-color: rgba(128, 128, 128, 0.335); max-width: 58ch; 
+                        max-height: 11ch;border:3px dashed  #9d2235;}
+        .textRedColor { color: #9d2235;font-weight: bold ;}
+        .newAccount{ display: none;}
+        .loginBox{display: none; }
+        .menu{ background-color: beige; max-width: 58ch;border: 3px dotted #9d2235;}
+        .orderEntry{  display: none;background-color: beige;min-height: 290px;
+                    min-width: 58ch;position: absolute;top: 310px;left: 65ch;padding:5px;
+                    border: 3px dotted #9d2235;}
+        .orderedit{ display: none;}
+        .display{ display:-moz-inline-grid}
+        .orderInfo{display: none;}
+        
+    </style>
+</head>
+<body>
+    <header>
+        <h1> Welcome to Alomayri' restaurant &#129392;</h1>
+    </header>
+     <main>  
+        
+         <div class="loginOrCreate"> 
+            <h3>To make an order, please log In Or create a new account </h3>
+            <button  onclick="login()"> <span class="textRedColor">Log In</span></button>
+            <button  onclick="newaccount()"><span class="textRedColor">Create New Account</span></button>
+        </div>          
+<div class="newAccount">
+    <input class="newfirstname" type="text" name="firstname" placeholder="Your First Name" required>
+    <input class = "newusername" type="text" name="username" placeholder="Username" required>
+    <input class = "newpasscode" type="password" name="password" placeholder="Password" required>
+    <button onclick="create()"><span class="textRedColor">Create Now</span></button> 
+<p class="welcomeMessage"></p>
+</div>
+<div class="loginBox"> 
+                <input class="username" type="text" name="username" placeholder="Username" required>
+                <input class = "password" type="password" name="password" placeholder="Password" required>
+                <button onclick="login()"><span class="textRedColor">Log In</span></button> 
+                <p class="loginMessage"></p>
+              
+            </div>
+            <div class= "menu">
+            <h3> Alomayri' Menu</h3>
+            <ul>
+                
+                <li class="pizzamenu">&#127829; <span class="textRedColor">Pizza</span></li>
+                <li class="chickenmenu">&#127831; <span class="textRedColor">Chicken</span></li>
+            </ul>
+        </div>
+    
+    
+    <div class="orderEntry">
+        <p>Enter Your Order, below.</p>
+        <ul>
+            <li>&#127829;<input class="Pizza" type="number" name="Pizza" placeholder=" Pizza Number" required>
+        <input class = "Pizzaquantity" type="number" name="Pizzaquantity" placeholder="Pizza Quantity" required>
+    </li>
+    <li>&#127831; <input class="Chicken " type="number" name="Chicken " placeholder="Chicken Number" required>
+        <input class = "Chickenquantity" type="number" name="Chickenquantity" placeholder="Chicken Quantity" required>
+    </li>
+    </ul>
+        <button onclick="buildOrder()"><span class="textRedColor">Order</span></button>  
+        <ol class = "orderList"> </ol>
+        <div class="orderedit"> <span class="textRedColor">Order Change</span> 
+    
+            <p>
+                <input class = "orderNumber" type="number" name="orderNumber" placeholder="Order Number" required>
+                <button onclick="getOrderData()"><span class="textRedColor">Get Order Data</span></button>  
+            </p>
+    
+    
+        </div> 
+        <div class = "orderInfo"> 
+    
+            <p class= "orderData"></p>
+            <p>&#127829; <span class="textRedColor">New Type:</span> 
+                <input class = "newPizza" type="number" name="newPizza" placeholder="Pizza Number" required>
+                <span class="textRedColor">New Quantity</span><input class = "newPQ" type="number" name="newPQ"placeholder="Pizza Quantity" required>
+            </p> 
+        <label for="newchicken">&#127831; <span class="textRedColor">New Type</span></label>
+            <input class = "newchicken" type="number" name="newchicken" placeholder="Chicken Number"required>
+            <label for="newCQ"><span class="textRedColor">New Quantity</span></label>
+            <input class = "newCQ" type="number" name="newCQ"placeholder="Chicken Quantity" required>
+                <p>
+                <button onclick="saveOrderData()"><span class="textRedColor">Save Order</span></button>  
+                <button onclick="removeOrder()"><span class="textRedColor">Remove Order</span></button> 
+            </p>
+        </div>
+    </div>
+    
+        
+     </main>
+   
+</body>
+</html>
